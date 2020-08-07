@@ -35,10 +35,7 @@
     >
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <app-register
-                    [valuesFromHome]="values"
-                    (cancelRegister)="cancelRegisterMode($event)"
-                ></app-register>
+                <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
             </div>
         </div>
     </div>
