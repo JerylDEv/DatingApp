@@ -2,17 +2,22 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-value',
-  templateUrl: './value.component.html',
-  styleUrls: ['./value.component.css'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
 })
-export class ValueComponent implements OnInit {
-  values: any;
+export class HomeComponent implements OnInit {
+  registerMode = false;
+  values: any = {};
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.getValues();
+  }
+
+  registerToggle(): void {
+    this.registerMode = true;
   }
 
   getValues(): void {
@@ -24,5 +29,9 @@ export class ValueComponent implements OnInit {
         console.log('There is an error.');
       }
     );
+  }
+
+  cancelRegisterMode(registerMode: boolean): void {
+    this.registerMode = registerMode;
   }
 }

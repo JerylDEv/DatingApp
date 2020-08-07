@@ -1,0 +1,45 @@
+<div class="container mt-5">
+    <section
+        *ngIf="!registerMode"
+        class="py-5 text-center container"
+    >
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="font-weight-light">Find your match</h1>
+                <p class="lead text-muted">
+                    Come on in and find your matches... All you need to do is sign up!
+                </p>
+                <div class="btn-toolbar d-flex justify-content-center">
+                    <button
+                        (click)="registerToggle()"
+                        class="btn btn-success"
+                        type="submit"
+                    >
+                        Register
+                    </button>
+                    &nbsp;
+                    &nbsp;
+                    <button
+                        class="btn btn-info"
+                        type="button"
+                    >
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div
+        *ngIf="registerMode"
+        class="container"
+    >
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <app-register
+                    [valuesFromHome]="values"
+                    (cancelRegister)="cancelRegisterMode($event)"
+                ></app-register>
+            </div>
+        </div>
+    </div>
+</div>

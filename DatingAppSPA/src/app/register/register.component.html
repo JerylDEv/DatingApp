@@ -1,0 +1,77 @@
+<form
+    #registerForm="ngForm"
+    (ngSubmit)="register()"
+    class="form-signin text-center"
+>
+    <h1 class="font-weight-light">Sign Up</h1>
+    <hr>
+    <label
+        for="inputUsername"
+        class="sr-only"
+    >
+        Username
+    </label>
+    <input
+        [(ngModel)]="model.username"
+        required
+        name="username"
+        type="text"
+        id="inputUsername"
+        class="form-control mb-3"
+        placeholder="Username"
+        required
+        autofocus
+    >
+    <label
+        for="inputPassword"
+        class="sr-only"
+    >
+        Password
+    </label>
+    <input
+        [(ngModel)]="model.password"
+        required
+        name="password"
+        type="password"
+        id="inputPassword"
+        class="form-control mb-3"
+        placeholder="Password"
+        required
+    >
+    <label
+        for="favoriteValue"
+        class="sr-only"
+    >
+        Favorite Value
+    </label>
+    <select
+        name="password"
+        id="favoriteValue"
+        class="form-control mb-3"
+    >
+        <option
+            *ngFor="let value of valuesFromHome"
+            [value]="value"
+        >
+            {{value.name}}
+        </option>
+    </select>
+    <div class="btn-toolbar d-flex justify-content-center">
+        <button
+            class="btn btn-success my-2"
+            type="submit"
+        >
+            Register
+        </button>
+        &nbsp;
+        &nbsp;
+        <button
+            (click)="cancel()"
+            class="btn btn-secondary my-2"
+            type="button"
+        >
+            Cancel
+        </button>
+    </div>
+    <p class="mt-5 mb-3 text-muted">© 2020</p>
+</form>
