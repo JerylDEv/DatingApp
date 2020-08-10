@@ -3,3 +3,42 @@
     margin-top: 0px;
   }
 }
+
+/* .btn-outline-success.disabled,
+.btn-outline-success:disabled {
+  background-color: #ffffff;
+} */
+
+/* .navbar {
+  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
+} */
+
+#brandLogo {
+  font-size: medium;
+  padding: 1rem;
+  color: #ffffff !important;
+}
+
+a.nav-link {
+  font-size: medium;
+}
+
+nav.navbar {
+  padding: 0rem;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 0rem;
+}
+
+/* #navbarDropdownMenuLink {
+  font-weight: 600;
+} */
+
+/* .navbar-dark .navbar-nav .nav-link.active {
+  color: #ffffff !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.65) !important;
+} */
