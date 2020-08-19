@@ -24,10 +24,10 @@
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.css",
-              "src/assets/assets/css/nucleo-svg.css",
-              "src/assets/assets/css/nucleo-icons.css",
-              "src/assets/assets/css/font-awesome.css",
-              "src/assets/assets/scss/argon-design-system.scss"
+              "src/assets/css/nucleo-svg.css",
+              "src/assets/css/nucleo-icons.css",
+              "src/assets/css/font-awesome.css",
+              "src/assets/scss/argon-design-system.scss"
             ],
             "scripts": [
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
@@ -79,10 +79,10 @@
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.css",
-              "src/assets/assets/css/nucleo-svg.css",
-              "src/assets/assets/css/nucleo-icons.css",
-              "src/assets/assets/css/font-awesome.css",
-              "src/assets/assets/scss/argon-design-system.scss"
+              "src/assets/css/nucleo-svg.css",
+              "src/assets/css/nucleo-icons.css",
+              "src/assets/css/font-awesome.css",
+              "src/assets/scss/argon-design-system.scss"
             ],
             "scripts": [
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
@@ -152,10 +152,10 @@
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.css",
-              "src/assets/assets/css/nucleo-svg.css",
-              "src/assets/assets/css/nucleo-icons.css",
-              "src/assets/assets/css/font-awesome.css",
-              "src/assets/assets/scss/argon-design-system.scss"
+              "src/assets/css/nucleo-svg.css",
+              "src/assets/css/nucleo-icons.css",
+              "src/assets/css/font-awesome.css",
+              "src/assets/scss/argon-design-system.scss"
             ],
             "scripts": [
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
