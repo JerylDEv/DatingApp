@@ -18,7 +18,6 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
-import { TabsModule } from 'ngx-bootstrap/tabs';
 
 export function tokkenGetter(): string {
   return localStorage.getItem('token');
@@ -41,7 +40,6 @@ export function tokkenGetter(): string {
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    TabsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     JwtModule.forRoot({
       config: {

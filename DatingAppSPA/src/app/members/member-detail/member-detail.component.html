@@ -1,7 +1,7 @@
 <div class="container-xxl pt-5">
     <div class="row">
         <div class="col-sm-4">
-            <div class="card card-profile shadow p-2">
+            <div class="card card-profile shadow p-3">
                 <img
                     src="{{user?.photoUrl}}"
                     alt="{{user?.knownAs}}"
@@ -53,28 +53,118 @@
             </div>
         </div>
         <div class="col-sm-8">
-            <div class="tab-panel">
-                <tabset
-                    type="pills"
-                    class="nav-fill flex-column flex-md-row"
+            <div class="card card-profile shadow p-3">
+                <ul
+                    class="nav nav-pills nav-fill mb-3"
+                    id="pills-tab"
+                    role="tablist"
                 >
-                    <tab heading="About {{user?.knownAs}}">
+                    <li
+                        class="nav-item"
+                        role="presentation"
+                    >
+                        <a
+                            class="nav-link active"
+                            id="pills-about-tab"
+                            data-toggle="pill"
+                            href="#pills-about"
+                            role="tab"
+                            aria-controls="pills-about"
+                            aria-selected="true"
+                        >
+                            About {{user?.knownAs}}
+                        </a>
+                    </li>
+                    <li
+                        class="nav-item"
+                        role="presentation"
+                    >
+                        <a
+                            class="nav-link"
+                            id="pills-interests-tab"
+                            data-toggle="pill"
+                            href="#pills-interests"
+                            role="tab"
+                            aria-controls="pills-interests"
+                            aria-selected="false"
+                        >
+                            Interests
+                        </a>
+                    </li>
+                    <li
+                        class="nav-item"
+                        role="presentation"
+                    >
+                        <a
+                            class="nav-link"
+                            id="pills-photos-tab"
+                            data-toggle="pill"
+                            href="#pills-photos"
+                            role="tab"
+                            aria-controls="pills-photos"
+                            aria-selected="false"
+                        >
+                            Photos
+                        </a>
+                    </li>
+                    <li
+                        class="nav-item"
+                        role="presentation"
+                    >
+                        <a
+                            class="nav-link"
+                            id="pills-messages-tab"
+                            data-toggle="pill"
+                            href="#pills-messages"
+                            role="tab"
+                            aria-controls="pills-messages"
+                            aria-selected="false"
+                        >
+                            Messages
+                        </a>
+                    </li>
+                </ul>
+                <div
+                    class="tab-content"
+                    id="pills-tabContent"
+                >
+                    <div
+                        class="tab-pane fade show active"
+                        id="pills-about"
+                        role="tabpanel"
+                        aria-labelledby="pills-about-tab"
+                    >
                         <h4>Description</h4>
                         <p>{{user?.introduction}}</p>
                         <h4>Looking For</h4>
                         <p>{{user?.lookingFor}}</p>
-                    </tab>
-                    <tab heading="Interests">
+                    </div>
+                    <div
+                        class="tab-pane fade"
+                        id="pills-interests"
+                        role="tabpanel"
+                        aria-labelledby="pills-interests-tab"
+                    >
                         <h4>Interests</h4>
                         <p>{{user?.interests}}</p>
-                    </tab>
-                    <tab heading="Photos">
+                    </div>
+                    <div
+                        class="tab-pane fade"
+                        id="pills-photos"
+                        role="tabpanel"
+                        aria-labelledby="pills-photos-tab"
+                    >
                         <p>Photos will go here.</p>
-                    </tab>
-                    <tab heading="Messages">
+                    </div>
+                    <div
+                        class="tab-pane fade"
+                        id="pills-messages"
+                        role="tabpanel"
+                        aria-labelledby="pills-messages-tab"
+                    >
                         <p>Messages will go here.</p>
-                    </tab>
-                </tabset>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
