@@ -18,6 +18,8 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
+import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
+import { MemberListResolver } from './_resolvers/member-list.resolver';
 
 export function tokkenGetter(): string {
   return localStorage.getItem('token');
@@ -49,7 +51,12 @@ export function tokkenGetter(): string {
       },
     }),
   ],
-  providers: [AuthService, ErrorInterceptorProvider],
+  providers: [
+    AuthService,
+    ErrorInterceptorProvider,
+    MemberDetailResolver,
+    MemberListResolver,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
