@@ -15,11 +15,13 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 export function tokkenGetter(): string {
@@ -35,6 +37,7 @@ export function tokkenGetter(): string {
     MemberListComponent,
     MemberCardComponent,
     MemberDetailComponent,
+    MemberEditComponent,
     ListsComponent,
     MessagesComponent,
   ],
@@ -58,6 +61,7 @@ export function tokkenGetter(): string {
     ErrorInterceptorProvider,
     MemberDetailResolver,
     MemberListResolver,
+    MemberEditResolver,
   ],
   bootstrap: [AppComponent],
 })
