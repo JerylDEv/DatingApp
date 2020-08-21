@@ -154,7 +154,11 @@
                         role="tabpanel"
                         aria-labelledby="pills-photos-tab"
                     >
-                        <p>Photos will go here.</p>
+                        <ngx-gallery
+                            [options]="galleryOptions"
+                            [images]="galleryImages"
+                            class="ngx-gallery"
+                        ></ngx-gallery>
                     </div>
                     <div
                         class="tab-pane fade"

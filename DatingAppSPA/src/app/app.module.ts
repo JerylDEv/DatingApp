@@ -20,6 +20,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 export function tokkenGetter(): string {
   return localStorage.getItem('token');
@@ -43,6 +44,7 @@ export function tokkenGetter(): string {
     FormsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
+    NgxGalleryModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokkenGetter,
