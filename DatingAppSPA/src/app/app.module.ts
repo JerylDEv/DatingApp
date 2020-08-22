@@ -23,6 +23,10 @@ import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { AlertifyService } from './_services/alertify.service';
+import { UserService } from './_services/user.service';
+import { AuthGuard } from './_guards/auth.guard';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 export function tokkenGetter(): string {
   return localStorage.getItem('token');
@@ -59,6 +63,10 @@ export function tokkenGetter(): string {
   providers: [
     AuthService,
     ErrorInterceptorProvider,
+    AuthGuard,
+    PreventUnsavedChanges,
+    AlertifyService,
+    UserService,
     MemberDetailResolver,
     MemberListResolver,
     MemberEditResolver,

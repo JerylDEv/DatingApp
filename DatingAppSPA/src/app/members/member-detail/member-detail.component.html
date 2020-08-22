@@ -1,11 +1,16 @@
-<div class="container-xxl pt-5">
+<div class="container-xxl">
+    <div class="row mt-3 mb-2">
+        <div class="col-sm-4 text-center">
+            <h1 class="pt-2 pb-2">{{user.knownAs}}'s Profile</h1>
+        </div>
+    </div>
     <div class="row">
         <div class="col-sm-4">
-            <div class="card card-profile shadow p-3">
+            <div class="card card-profile shadow">
                 <img
                     src="{{user.photoUrl}}"
                     alt="{{user.knownAs}}"
-                    class="img-fluid rounded-circle mx-auto mt-3"
+                    class="img-fluid rounded-circle mx-auto mt-4"
                     style="width: 200px;"
                 >
 
@@ -15,7 +20,7 @@
                             {{user.knownAs}}
                             <span class="font-weight-light">, {{user.age}}</span>
                         </h3>
-                        <div class="h5 font-weight-300">
+                        <div class="h4 font-weight-300">
                             <i class="ni ni-square-pin text-primary"></i>
                             &nbsp;
                             {{user.city}}, {{user.country}}
@@ -36,18 +41,18 @@
                 </div>
                 <div class="card-footer">
                     <div class="btn-group d-flex">
-                        <a
+                        <button
                             class="btn btn-danger w-100"
                             href="javascript:void(0)"
                         >
                             Like
-                        </a>
-                        <a
+                        </button>
+                        <button
                             class="btn btn-success w-100"
                             href="javascript:void(0)"
                         >
                             Message
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
