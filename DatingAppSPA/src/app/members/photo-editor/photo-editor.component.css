@@ -34,3 +34,11 @@
 .animate {
   transition: all 0.3s ease-in-out;
 }
+
+.nv-file-over {
+  border: dashed 2px red;
+}
+
+input[type="file"] {
+  color: transparent;
+}

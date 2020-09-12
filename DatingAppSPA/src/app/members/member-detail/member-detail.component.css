@@ -2,3 +2,7 @@
   display: inline-block;
   margin-bottom: 20px;
 }
+
+ngx-gallery /deep/ .ngx-gallery-icon {
+  color: #5e72e4;
+}

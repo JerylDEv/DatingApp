@@ -37,6 +37,28 @@ export class MemberDetailComponent implements OnInit {
         imageAnimation: NgxGalleryAnimation.Slide,
         preview: false,
       },
+      {
+        // arrowPrevIcon: 'fa fa-arrow-circle-o-left',
+        // arrowNextIcon: 'fa fa-arrow-circle-o-right',
+        closeIcon: 'fa fa-window-close',
+        // fullscreenIcon: 'fa fa-arrows',
+        spinnerIcon: 'fa fa-refresh fa-spin fa-3x fa-fw',
+        previewFullscreen: true,
+        imageArrowsAutoHide: true,
+        thumbnailsArrowsAutoHide: true,
+      },
+      {
+        breakpoint: 500,
+        width: '300px',
+        height: '300px',
+        thumbnailsColumns: 3,
+      },
+      {
+        breakpoint: 300,
+        width: '100%',
+        height: '200px',
+        thumbnailsColumns: 2,
+      },
     ];
 
     this.galleryImages = this.getImages();
