@@ -42,3 +42,8 @@ nav.navbar {
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.65) !important;
 } */
+
+/* #navbarDropdownMenuLink {
+  padding-top: 0;
+  padding-bottom: 0;
+} */

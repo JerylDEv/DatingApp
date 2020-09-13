@@ -1,6 +1,9 @@
 <header>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav
+        class="navbar navbar-expand-lg navbar-dark bg-primary"
+        style="min-height: 80px;"
+    >
         <div
             class="container-xxl"
             id="navContainer"
@@ -104,10 +107,18 @@
                             data-toggle="dropdown"
                             aria-expanded="false"
                         >
+                            <!-- <a class="avatar mr-2"> -->
+                            <img
+                                class="img-fluid rounded mr-3 "
+                                style="height: 48px;"
+                                alt="Member Image"
+                                src="{{photoUrl}}"
+                            >
+                            <!-- </a> -->
                             Welcome {{authService.decodedToken?.unique_name|titlecase}}!
                         </a>
                         <ul
-                            class="dropdown-menu"
+                            class="dropdown-menu ml-3"
                             aria-labelledby="navbarDropdownMenuLink"
                         >
                             <li>
