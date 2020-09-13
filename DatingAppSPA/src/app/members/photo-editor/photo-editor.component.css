@@ -42,3 +42,9 @@
 input[type="file"] {
   color: transparent;
 }
+
+/* Keep the opacity of the buttons to 1 */
+.btn:disabled {
+  opacity: 1;
+  box-shadow: none;
+}

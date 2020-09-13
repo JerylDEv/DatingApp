@@ -23,4 +23,12 @@ export class UserService {
   updateUser(id: number, user: User): Observable<User> {
     return this.http.put<User>(this.baseUrl + 'users/' + id, user);
   }
+
+  // tslint:disable-next-line: ban-types
+  setMainPhoto(userId: number, id: number): Observable<Object>  {
+    return this.http.post(
+      this.baseUrl + 'users/' + userId + '/photos/' + id + '/setMain',
+      {}
+    );
+  }
 }
