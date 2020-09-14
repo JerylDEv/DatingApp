@@ -25,10 +25,15 @@ export class UserService {
   }
 
   // tslint:disable-next-line: ban-types
-  setMainPhoto(userId: number, id: number): Observable<Object>  {
+  setMainPhoto(userId: number, id: number): Observable<Object> {
     return this.http.post(
       this.baseUrl + 'users/' + userId + '/photos/' + id + '/setMain',
       {}
     );
+  }
+
+  // tslint:disable-next-line: ban-types
+  deletePhoto(userId: number, id: number): Observable<Object> {
+    return this.http.delete(this.baseUrl + 'users/' + userId + '/photos/' + id);
   }
 }

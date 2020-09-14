@@ -145,7 +145,11 @@
                     </button>
                 </li>
                 <li class="list-inline-item">
-                    <button class="btn btn-danger">
+                    <button
+                        class="btn btn-danger"
+                        (click)="deletePhoto(photo.id)"
+                        [disabled]="photo.isMain"
+                    >
                         <i class="fas fa-trash-alt fa-lg"></i>
                     </button>
                 </li>
