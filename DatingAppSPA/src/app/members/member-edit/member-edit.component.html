@@ -45,12 +45,12 @@
                         <p class="d-flex justify-content-between">
 
                             <strong>Last Active:</strong>
-                            <span class="float-right">{{user.lastActive}}</span>
+                            <span class="float-right">{{user.lastActive | timeago}}</span>
                         </p>
                         <p class="d-flex justify-content-between">
                             <strong>Member Since:</strong>
                             &nbsp;
-                            <span class="float-right">{{user.created}}</span>
+                            <span class="float-right">{{user.created | date: 'mediumDate'}}</span>
                         </p>
                     </div>
                 </div>

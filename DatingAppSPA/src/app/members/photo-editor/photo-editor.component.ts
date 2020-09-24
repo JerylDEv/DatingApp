@@ -27,7 +27,9 @@ export class PhotoEditorComponent implements OnInit {
     this.initializeUploader();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // console.log('current photo count::' + this.photos.length);
+  }
 
   fileOverBase(e: any): void {
     this.hasBaseDropZoneOver = e;
@@ -105,10 +107,13 @@ export class PhotoEditorComponent implements OnInit {
             this.photos.splice(this.photos.findIndex((p) => p.id === id, 1));
             this.alertify.success('The photo has been deleted.');
           },
-          (error) => {
+          () => {
             this.alertify.error('Failed to delete the photo.');
           }
         );
     });
+    // this.photos.forEach((photo) => {
+    //   console.log(photo.url);
+    // });
   }
 }

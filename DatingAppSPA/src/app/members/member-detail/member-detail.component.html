@@ -1,7 +1,7 @@
 <div class="container-xxl">
     <div class="row mt-3 mb-2">
         <div class="col-sm-4 text-center">
-            <h1 class="pt-2 pb-2">{{user.knownAs}}'s Profile</h1>
+            <h1 class="pt-2 pb-2">{{user.knownAs | titlecase}}'s Profile</h1>
         </div>
     </div>
     <div class="row">
@@ -30,12 +30,12 @@
                         <p class="d-flex justify-content-between">
 
                             <strong>Last Active:</strong>
-                            <span class="float-right">{{user.lastActive}}</span>
+                            <span class="float-right">{{user.lastActive | timeago}}</span>
                         </p>
                         <p class="d-flex justify-content-between">
                             <strong>Member Since:</strong>
                             &nbsp;
-                            <span class="float-right">{{user.created}}</span>
+                            <span class="float-right">{{user.created | date:'mediumDate'}}</span>
                         </p>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                             aria-controls="pills-about"
                             aria-selected="true"
                         >
-                            About {{user.knownAs}}
+                            About {{user.knownAs | titlecase}}
                         </a>
                     </li>
                     <li
@@ -129,10 +129,22 @@
                         role="tabpanel"
                         aria-labelledby="pills-about-tab"
                     >
-                        <h4>Description</h4>
-                        <p>{{user.introduction}}</p>
-                        <h4>Looking For</h4>
-                        <p>{{user.lookingFor}}</p>
+                        <div *ngIf="user.lookingFor !=null;else descriptionElseBlock">
+                            <h4>Description</h4>
+                            <p>{{user.introduction}}</p>
+                        </div>
+                        <ng-template #descriptionElseBlock>
+                            <p>Description is not provided yet.</p>
+                        </ng-template>
+                        <div *ngIf="user.lookingFor !=null;else lookingForElseBlock">
+                            <h4>Looking For</h4>
+                            <p>{{user.lookingFor}}</p>
+                        </div>
+                        <ng-template #lookingForElseBlock>
+                            <p>
+                                Looking For criteria is not provided yet.
+                            </p>
+                        </ng-template>
                     </div>
                     <div
                         class="tab-pane fade"
@@ -140,8 +152,13 @@
                         role="tabpanel"
                         aria-labelledby="pills-interests-tab"
                     >
-                        <h4>Interests</h4>
-                        <p>{{user.interests}}</p>
+                        <div *ngIf="user.interests !=null;else interestsElseBlock">
+                            <h4>Interests</h4>
+                            <p>{{user.interests}}</p>
+                        </div>
+                        <ng-template #interestsElseBlock>
+                            <p>Interests is not provided yet.</p>
+                        </ng-template>
                     </div>
                     <div
                         class="tab-pane fade"
@@ -150,10 +167,14 @@
                         aria-labelledby="pills-photos-tab"
                     >
                         <ngx-gallery
+                            *ngIf="user.photos.length !=0;else photosElseBlock"
                             [options]="galleryOptions"
                             [images]="galleryImages"
                             class="ngx-gallery"
                         ></ngx-gallery>
+                        <ng-template #photosElseBlock>
+                            <p>No photos are uploaded yet.</p>
+                        </ng-template>
                     </div>
                     <div
                         class="tab-pane fade"
