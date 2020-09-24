@@ -4,11 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import { TimeagoModule } from 'ngx-timeago';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -58,8 +60,10 @@ export function tokkenGetter(): string {
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    PaginationModule.forRoot(),
     NgxGalleryModule,
     TimeagoModule.forRoot(),
+    ButtonsModule.forRoot(),
     FileUploadModule,
     JwtModule.forRoot({
       config: {
