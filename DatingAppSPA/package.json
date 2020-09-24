@@ -28,6 +28,7 @@
     "bootstrap-icons": "^1.0.0-alpha5",
     "font-awesome": "^4.7.0",
     "ng2-file-upload": "^1.4.0",
+    "ngx-bootstrap": "^6.1.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"

@@ -112,7 +112,7 @@
                                 class="img-fluid rounded mr-3 "
                                 style="height: 48px;"
                                 alt="Member Image"
-                                src="{{photoUrl}}"
+                                src="{{photoUrl||'../../assets/user.png'}}"
                             >
                             <!-- </a> -->
                             Welcome {{authService.decodedToken?.unique_name|titlecase}}!

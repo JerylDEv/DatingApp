@@ -24,21 +24,21 @@
         <div class="col-sm-4">
             <div class="card card-profile shadow">
                 <img
-                    src="{{photoUrl}}"
-                    alt="{{user.knownAs}}"
+                    src="{{photoUrl || '../../../assets/user.png'}}"
+                    alt="{{user.knownAs | titlecase}}"
                     class="img-fluid rounded-circle mx-auto mt-4"
                     style="width: 200px;"
                 >
                 <div class="card-body">
                     <div class="text-center">
                         <h3>
-                            {{user.knownAs}}
+                            {{user.knownAs | titlecase}}
                             <span class="font-weight-light">, {{user.age}}</span>
                         </h3>
                         <div class="h4 font-weight-300">
                             <i class="ni ni-square-pin text-primary"></i>
                             &nbsp;
-                            {{user.city}}, {{user.country}}
+                            {{user.city | titlecase}}, {{user.country | titlecase}}
                         </div>
                     </div>
                     <div class="mt-4">

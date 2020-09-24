@@ -4,7 +4,7 @@
 >
     <div class="card-image-wrapper">
         <img
-            src="{{user.photoUrl}}"
+            src="{{user.photoUrl || '../../../assets/user.png'}}"
             class="card-img-top"
             alt="{{user.knownAs}}"
         >
@@ -34,8 +34,8 @@
         <h5 class="card-title">
             <i class="ni ni-single-02 text-primary"></i>
             &nbsp;
-            {{user.knownAs}}, {{user.age}}
+            {{user.knownAs | titlecase}}, {{user.age}}
         </h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{user.city}}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{user.city | titlecase}}</h6>
     </div>
 </div>
