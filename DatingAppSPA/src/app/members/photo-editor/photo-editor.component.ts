@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
 import { Photo } from 'src/app/_models/photo';
 import { AlertifyService } from 'src/app/_services/alertify.service';
@@ -27,9 +34,7 @@ export class PhotoEditorComponent implements OnInit {
     this.initializeUploader();
   }
 
-  ngOnInit(): void {
-    // console.log('current photo count::' + this.photos.length);
-  }
+  ngOnInit(): void {}
 
   fileOverBase(e: any): void {
     this.hasBaseDropZoneOver = e;
@@ -104,7 +109,10 @@ export class PhotoEditorComponent implements OnInit {
         .deletePhoto(this.authService.decodedToken.nameid, id)
         .subscribe(
           () => {
-            this.photos.splice(this.photos.findIndex((p) => p.id === id, 1));
+            this.photos.splice(
+              this.photos.findIndex((p) => p.id === id),
+              1
+            );
             this.alertify.success('The photo has been deleted.');
           },
           () => {
@@ -112,8 +120,5 @@ export class PhotoEditorComponent implements OnInit {
           }
         );
     });
-    // this.photos.forEach((photo) => {
-    //   console.log(photo.url);
-    // });
   }
 }

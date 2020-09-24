@@ -1,4 +1,4 @@
-.card:hover img {
+/* .card:hover img {
   transform: scale(1.2, 1.2);
   transition-duration: 500ms;
   transition-timing-function: ease-out;
@@ -9,12 +9,12 @@
   transform: scale(1, 1);
   transition-duration: 500ms;
   transition-timing-function: ease-out;
-}
+} */
 
-.card-image-wrapper {
+/* .card-image-wrapper {
   overflow: hidden;
   position: relative;
-}
+} */
 
 .member-icons {
   position: absolute;
