@@ -33,6 +33,7 @@ import { AlertifyService } from './_services/alertify.service';
 import { UserService } from './_services/user.service';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
+import { ListsResolver } from './_resolvers/lists.resolver';
 
 export function tokkenGetter(): string {
   return localStorage.getItem('token');
@@ -83,6 +84,7 @@ export function tokkenGetter(): string {
     MemberDetailResolver,
     MemberListResolver,
     MemberEditResolver,
+    ListsResolver,
   ],
   bootstrap: [AppComponent],
 })
