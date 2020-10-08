@@ -18,7 +18,7 @@
             <div class="form-group">
                 <label
                     for="minAge"
-                    class="form-label"
+                    class="form-label mr-2"
                 >
                     Age From
                 </label>
@@ -34,7 +34,7 @@
             <div class="form-group px-2">
                 <label
                     for="maxAge"
-                    class="form-label"
+                    class="form-label mr-2"
                 >
                     Age To
                 </label>
@@ -50,7 +50,7 @@
             <div class="form-group px-2">
                 <label
                     for="gender"
-                    class="form-label"
+                    class="form-label mr-2"
                 >
                     Show:
                 </label>
@@ -84,27 +84,30 @@
             >
                 Reset Filter
             </button>
-            <div class="btn-group">
-                <button
-                    type="button"
-                    name="orderBy"
-                    class="btn btn-primary"
-                    [(ngModel)]="userParams.orderBy"
-                    (click)="loadUsers()"
-                    btnRadio='lastActive'
-                >
-                    Last Active
-                </button>
-                <button
-                    type="button"
-                    name="orderBy"
-                    class="btn btn-primary"
-                    [(ngModel)]="userParams.orderBy"
-                    (click)="loadUsers()"
-                    btnRadio="created"
-                >
-                    Newest Members
-                </button>
+            <div class="form-group px-2">
+                <label class="mr-2">Order by:</label>
+                <div class="btn-group">
+                    <button
+                        type="button"
+                        name="orderBy"
+                        class="btn btn-primary"
+                        [(ngModel)]="userParams.orderBy"
+                        (click)="loadUsers()"
+                        btnRadio='lastActive'
+                    >
+                        Last Active
+                    </button>
+                    <button
+                        type="button"
+                        name="orderBy"
+                        class="btn btn-primary"
+                        [(ngModel)]="userParams.orderBy"
+                        (click)="loadUsers()"
+                        btnRadio="created"
+                    >
+                        Newest Members
+                    </button>
+                </div>
             </div>
         </form>
     </div>
