@@ -1,71 +1,83 @@
 <div class="card">
-    <div class="card-body">
+    <div
+        class="card-body"
+        id="memberMessageSection"
+    >
         <div *ngIf="messages?.length === 0">
             <p>No Messages yet... say hi!</p>
         </div>
         <ul
             class="list-group-flush"
             style="list-style: none;"
-            style="padding: 0;"
         >
             <li
                 *ngFor="let message of messages"
                 class="list-group-item"
+                style="padding: 0;"
             >
                 <!-- from the member -->
                 <div *ngIf="message.senderId == recipientId">
-                    <span class="chat-img float-left mr-3">
-                        <img
-                            src="{{message.senderPhotoUrl}}"
-                            alt="{{message.senderKnownAs | titlecase}}"
-                            class="rounded-circle"
-                        >
-                    </span>
-                    <div class="chat-body">
-                        <div class="header">
-                            <strong class="primary-font mr-1">{{message.senderKnownAs | titlecase}}</strong>
-                            <small class="text-muted float-right mr-1">
-                                <span>
-                                    <i class="fa fa-clock-o mr-1"></i>
-                                    {{message.messageSent | timeago}}
-                                </span>
-                            </small>
+                    <div class="d-flex flex-row">
+                        <div class="p-2">
+                            <img
+                                class="avatar avatar-lg rounded-circle "
+                                src="{{message.senderPhotoUrl}}"
+                                alt="{{message.senderKnownAs | titlecase}}"
+                            >
                         </div>
-                        <p>{{message.content}}</p>
+                        <div class="p-2">
+                            <div class="card">
+                                <div class="card-body p-2">
+                                    <p>{{message.content}}</p>
+                                    <div>
+                                        <small class="opacity-60">
+                                            <i class="far fa-clock"></i>
+                                            <span class="ml-1">{{message.messageSent | timeago}}</span>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- from me -->
                 <div *ngIf="message.senderId != recipientId">
-                    <span class="chat-img float-right">
-                        <img
-                            src="{{message.senderPhotoUrl}}"
-                            alt="{{message.senderKnownAs}}"
-                            class="rounded-circle"
-                        >
-                    </span>
-                    <div class="chat-body">
-                        <div class="header">
-                            <small class="text-muted float-right mr-1">
-                                <span>
-                                    <i class="fa fa-clock-o mr-1"></i>
-                                    {{message.messageSent | timeago}}
-                                </span>
-                                <span
-                                    *ngIf="!message.isRead"
-                                    class="text-danger mr-1 ml-1"
-                                >
-                                    (unread)
-                                </span>
-                                <span
-                                    *ngIf="message.isRead"
-                                    class="text-success mr-1 ml-1"
-                                >
-                                    (Read {{message.dateRead | timeago}})
-                                </span>
-                            </small>
-                            <strong class="primary-font mr-1">{{message.senderKnownAs | titlecase}}</strong>
+                    <div class="d-flex flex-row-reverse">
+                        <div class="p-2">
+
+                            <img
+                                class="avatar avatar-lg rounded-circle "
+                                src="{{message.senderPhotoUrl}}"
+                                alt="{{message.senderKnownAs | titlecase}}"
+                            >
                         </div>
-                        <p style="margin-bottom: 0;">{{message.content}}</p>
+
+                        <div class="p-2">
+                            <div class="card bg-gradient-primary text-white">
+                                <div class="card-body p-2">
+                                    <p>{{message.content}}</p>
+                                    <div>
+                                        <small class="opacity-60">
+                                            <i class="far fa-clock"></i>
+                                            <span
+                                                *ngIf="!message.isRead"
+                                                class="ml-1"
+                                            >
+                                                {{message.messageSent | timeago}}
+                                                <i class="fas fa-check ml-2"></i>
+                                            </span>
+                                            <span
+                                                *ngIf="message.isRead"
+                                                class="ml-1"
+                                            >
+                                                {{message.dateRead | timeago}}
+                                                <i class="fas fa-check-double ml-2"></i>
+                                            </span>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </li>
