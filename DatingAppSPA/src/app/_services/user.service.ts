@@ -134,4 +134,9 @@ export class UserService {
       this.baseUrl + 'users/' + id + '/messages/thread/' + recipientId
     );
   }
+
+  // tslint:disable-next-line: ban-types
+  sendMessage(id: number, message: Message): Observable<Object> {
+    return this.http.post(this.baseUrl + 'users/' + id + '/messages', message);
+  }
 }

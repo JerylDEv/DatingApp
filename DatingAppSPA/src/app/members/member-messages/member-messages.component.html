@@ -1,92 +1,103 @@
 <div class="card">
-    <div
-        class="card-body"
-        id="memberMessageSection"
-    >
-        <div *ngIf="messages?.length === 0">
+    <div class="card-body">
+        <div *ngIf="messages?.length === 0; else elseBlock">
             <p>No Messages yet... say hi!</p>
         </div>
-        <ul
-            class="list-group-flush"
-            style="list-style: none;"
-        >
-            <li
-                *ngFor="let message of messages"
-                class="list-group-item"
-                style="padding: 0;"
+        <ng-template #elseBlock>
+            <ul
+                class="list-group-flush"
+                style="overflow-y: scroll; height: 300px; scroll-behavior: smooth;"
+                #scrollMe
+                [scrollTop]="scrollMe.scrollHeight"
             >
-                <!-- from the member -->
-                <div *ngIf="message.senderId == recipientId">
-                    <div class="d-flex flex-row">
-                        <div class="p-2">
-                            <img
-                                class="avatar avatar-lg rounded-circle "
-                                src="{{message.senderPhotoUrl}}"
-                                alt="{{message.senderKnownAs | titlecase}}"
-                            >
-                        </div>
-                        <div class="p-2">
-                            <div class="card">
-                                <div class="card-body p-2">
-                                    <p>{{message.content}}</p>
-                                    <div>
-                                        <small class="opacity-60">
-                                            <i class="far fa-clock mr-2"></i>
-                                            <span>{{message.messageSent | timeago}}</span>
-                                        </small>
+                <li
+                    *ngFor="let message of messages"
+                    class="list-group-item"
+                    style="padding: 0;"
+                >
+                    <!-- from the member -->
+                    <div *ngIf="message.senderId == recipientId">
+                        <div class="d-flex flex-row">
+                            <div class="p-2">
+                                <img
+                                    class="avatar avatar-lg rounded-circle "
+                                    src="{{message.senderPhotoUrl}}"
+                                    alt="{{message.senderKnownAs | titlecase}}"
+                                >
+                            </div>
+                            <div class="p-2">
+                                <div class="card">
+                                    <div class="card-body p-2">
+                                        <p>{{message.content}}</p>
+                                        <div>
+                                            <small class="opacity-60">
+                                                <i class="far fa-clock mr-2"></i>
+                                                <span>{{message.messageSent | timeago}}</span>
+                                            </small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- from me -->
-                <div *ngIf="message.senderId != recipientId">
-                    <div class="d-flex flex-row-reverse">
-                        <div class="p-2">
-                            <img
-                                class="avatar avatar-lg rounded-circle "
-                                src="{{message.senderPhotoUrl}}"
-                                alt="{{message.senderKnownAs | titlecase}}"
-                            >
-                        </div>
-                        <div class="p-2">
-                            <div class="card bg-gradient-primary text-white">
-                                <div class="card-body p-2">
-                                    <p>{{message.content}}</p>
-                                    <div>
-                                        <small class="opacity-60">
-                                            <i class="far fa-clock mr-2"></i>
-                                            <span *ngIf="!message.isRead">
-                                                {{message.messageSent | timeago}}
-                                                <i class="fas fa-check ml-2"></i>
-                                            </span>
-                                            <span *ngIf="message.isRead">
-                                                {{message.dateRead | timeago}}
-                                                <i class="fas fa-check-double ml-2"></i>
-                                            </span>
-                                        </small>
+                    <!-- from me -->
+                    <div *ngIf="message.senderId != recipientId">
+                        <div class="d-flex flex-row-reverse">
+                            <div class="p-2">
+                                <img
+                                    class="avatar avatar-lg rounded-circle "
+                                    src="{{message.senderPhotoUrl}}"
+                                    alt="{{message.senderKnownAs | titlecase}}"
+                                >
+                            </div>
+                            <div class="p-2">
+                                <div class="card bg-gradient-primary text-white">
+                                    <div class="card-body p-2">
+                                        <p>{{message.content}}</p>
+                                        <div>
+                                            <small class="opacity-60">
+                                                <i class="far fa-clock mr-2"></i>
+                                                <span *ngIf="!message.isRead">
+                                                    {{message.messageSent | timeago}}
+                                                    <i class="fas fa-check ml-2"></i>
+                                                </span>
+                                                <span *ngIf="message.isRead">
+                                                    {{message.dateRead | timeago}}
+                                                    <i class="fas fa-check-double ml-2"></i>
+                                                </span>
+                                            </small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </li>
-        </ul>
+                </li>
+            </ul>
+        </ng-template>
+
     </div>
     <div class="card-footer">
-        <form action>
+        <form
+            #messageForm="ngForm"
+            (ngSubmit)="messageForm.valid && sendMessage()"
+        >
             <div class="input-group">
                 <input
+                    [(ngModel)]="newMessage.content"
                     type="text"
-                    name="sentMessage"
-                    id="sentMessage"
+                    name="content"
+                    required
                     class="form-control input-sm"
                     placeholder="Send a private message"
                 >
                 <div class="input-group-append">
-                    <button class="btn btn-primary">Send</button>
+                    <button
+                        class="btn btn-primary"
+                        [disabled]="!messageForm.valid"
+                    >
+                        Send
+                    </button>
                 </div>
             </div>
         </form>
