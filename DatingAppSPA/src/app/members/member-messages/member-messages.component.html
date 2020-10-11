@@ -57,14 +57,16 @@
                                         <div>
                                             <small class="opacity-60">
                                                 <i class="far fa-clock mr-2"></i>
-                                                <span *ngIf="!message.isRead">
+                                                <span *ngIf="!message.isRead; else messageReadBlock">
                                                     {{message.messageSent | timeago}}
                                                     <i class="fas fa-check ml-2"></i>
                                                 </span>
-                                                <span *ngIf="message.isRead">
-                                                    {{message.dateRead | timeago}}
-                                                    <i class="fas fa-check-double ml-2"></i>
-                                                </span>
+                                                <ng-template #messageReadBlock>
+                                                    <span *ngIf="message.isRead">
+                                                        {{message.dateRead | timeago}}
+                                                        <i class="fas fa-check-double ml-2"></i>
+                                                    </span>
+                                                </ng-template>
                                             </small>
                                         </div>
                                     </div>

@@ -139,4 +139,21 @@ export class UserService {
   sendMessage(id: number, message: Message): Observable<Object> {
     return this.http.post(this.baseUrl + 'users/' + id + '/messages', message);
   }
+
+  // tslint:disable-next-line: ban-types
+  deleteMessage(id: number, userId: number): Observable<Object> {
+    return this.http.post(
+      this.baseUrl + 'users/' + userId + '/messages/' + id,
+      {}
+    );
+  }
+
+  markAsRead(userId: number, messageId: number): void {
+    this.http
+      .post(
+        this.baseUrl + 'users/' + userId + '/messages/' + messageId + '/read',
+        {}
+      )
+      .subscribe();
+  }
 }
