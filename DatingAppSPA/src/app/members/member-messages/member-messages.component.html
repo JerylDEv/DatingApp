@@ -31,8 +31,8 @@
                                     <p>{{message.content}}</p>
                                     <div>
                                         <small class="opacity-60">
-                                            <i class="far fa-clock"></i>
-                                            <span class="ml-1">{{message.messageSent | timeago}}</span>
+                                            <i class="far fa-clock mr-2"></i>
+                                            <span>{{message.messageSent | timeago}}</span>
                                         </small>
                                     </div>
                                 </div>
@@ -44,32 +44,24 @@
                 <div *ngIf="message.senderId != recipientId">
                     <div class="d-flex flex-row-reverse">
                         <div class="p-2">
-
                             <img
                                 class="avatar avatar-lg rounded-circle "
                                 src="{{message.senderPhotoUrl}}"
                                 alt="{{message.senderKnownAs | titlecase}}"
                             >
                         </div>
-
                         <div class="p-2">
                             <div class="card bg-gradient-primary text-white">
                                 <div class="card-body p-2">
                                     <p>{{message.content}}</p>
                                     <div>
                                         <small class="opacity-60">
-                                            <i class="far fa-clock"></i>
-                                            <span
-                                                *ngIf="!message.isRead"
-                                                class="ml-1"
-                                            >
+                                            <i class="far fa-clock mr-2"></i>
+                                            <span *ngIf="!message.isRead">
                                                 {{message.messageSent | timeago}}
                                                 <i class="fas fa-check ml-2"></i>
                                             </span>
-                                            <span
-                                                *ngIf="message.isRead"
-                                                class="ml-1"
-                                            >
+                                            <span *ngIf="message.isRead">
                                                 {{message.dateRead | timeago}}
                                                 <i class="fas fa-check-double ml-2"></i>
                                             </span>
@@ -91,7 +83,7 @@
                     name="sentMessage"
                     id="sentMessage"
                     class="form-control input-sm"
-                    placeholder="send a private message"
+                    placeholder="Send a private message"
                 >
                 <div class="input-group-append">
                     <button class="btn btn-primary">Send</button>

@@ -11,6 +11,7 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import { TimeagoModule } from 'ngx-timeago';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { TabsetComponent, TabsModule } from 'ngx-bootstrap/tabs';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -68,6 +69,7 @@ export function tokkenGetter(): string {
     NgxGalleryModule,
     TimeagoModule.forRoot(),
     ButtonsModule.forRoot(),
+    TabsModule.forRoot(),
     FileUploadModule,
     JwtModule.forRoot({
       config: {
