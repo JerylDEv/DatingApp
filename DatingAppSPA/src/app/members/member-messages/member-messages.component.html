@@ -4,8 +4,9 @@
             <p>No Messages yet... say hi!</p>
         </div>
         <ul
-            class="list-group"
+            class="list-group-flush"
             style="list-style: none;"
+            style="padding: 0;"
         >
             <li
                 *ngFor="let message of messages"
@@ -81,7 +82,7 @@
                     placeholder="send a private message"
                 >
                 <div class="input-group-append">
-                    <button class="btn btn-primary">Send Message</button>
+                    <button class="btn btn-primary">Send</button>
                 </div>
             </div>
         </form>
